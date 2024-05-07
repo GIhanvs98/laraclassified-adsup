@@ -1,0 +1,430 @@
+name: Countries
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/countries
+    metadata:
+      title: 'List countries'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: '{local-code}'
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the country relationships for Eager Loading - Possible values: currency,continent.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      includeNonActive:
+        name: includeNonActive
+        description: 'Allow to include the non-activated countries in the list.'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      iti:
+        name: iti
+        description: 'Allow to get the countries list for the phone number input (No other parameters need except ''countryCode'').'
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      countryCode:
+        name: countryCode
+        description: 'The code of the current country (Only when the ''iti'' parameter is filled to true).'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      sort:
+        name: sort
+        description: 'The sorting parameter (Order by DESC with the given column. Use "-" as prefix to order by ASC). Possible values: name.'
+        required: false
+        example: '-name'
+        type: string
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Items per page. Can be defined globally from the admin settings. Cannot be exceeded 100.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"data":[{"code":"AF","name":"Afghanistan","capital":"Kabul","continent_code":"AS","tld":".af","currency_code":"AFN","phone":"93","languages":"fa-AF,ps,uz-AF,tk","time_zone":null,"date_format":null,"datetime_format":null,"background_image":"app\/logo\/header-63719ec13cb7e.jpg","admin_type":"0","active":1,"icode":"af","flag_url":"https:\/\/demo.laraclassifier.local\/images\/flags\/16\/af.png","background_image_url":"https:\/\/demo.laraclassifier.local\/storage\/app\/logo\/thumb-2000x1000-header-63719ec13cb7e.jpg"},{"code":"AL","name":"Albania","capital":"Tirana","continent_code":"EU","tld":".al","currency_code":"ALL","phone":"355","languages":"sq,el","time_zone":null,"date_format":null,"datetime_format":null,"background_image":"app\/logo\/header-63719ec13ff8c.jpg","admin_type":"0","active":1,"icode":"al","flag_url":"https:\/\/demo.laraclassifier.local\/images\/flags\/16\/al.png","background_image_url":"https:\/\/demo.laraclassifier.local\/storage\/app\/logo\/thumb-2000x1000-header-63719ec13ff8c.jpg"}],"links":{"first":"https:\/\/demo.laraclassifier.local\/api\/countries?page=1","last":"https:\/\/demo.laraclassifier.local\/api\/countries?page=122","prev":null,"next":"https:\/\/demo.laraclassifier.local\/api\/countries?page=2"},"meta":{"current_page":1,"from":1,"last_page":122,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=1","label":"1","active":true},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=2","label":"2","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=3","label":"3","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=4","label":"4","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=5","label":"5","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=6","label":"6","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=7","label":"7","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=8","label":"8","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=9","label":"9","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=121","label":"121","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=122","label":"122","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries?page=2","label":"Next &raquo;","active":false}],"path":"https:\/\/demo.laraclassifier.local\/api\/countries","per_page":2,"to":2,"total":244}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/countries/{code}'
+    metadata:
+      title: 'Get country'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      code:
+        name: code
+        description: 'The country''s ISO 3166-1 code.'
+        required: true
+        example: DE
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the country relationships for Eager Loading - Possible values: currency.'
+        required: false
+        example: currency
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"code":"DE","name":"Germany","capital":"Berlin","continent_code":"EU","tld":".de","currency_code":"EUR","phone":"49","languages":"de","time_zone":null,"date_format":null,"datetime_format":null,"background_image":"app\/logo\/header-63719ec1a751b.jpg","admin_type":"1","active":1,"currency":{"code":"EUR","name":"Euro Member Countries","symbol":"€","html_entities":"€","in_left":0,"decimal_places":2,"decimal_separator":",","thousand_separator":" "},"icode":"de","flag_url":"https:\/\/demo.laraclassifier.local\/images\/flags\/16\/de.png","background_image_url":"https:\/\/demo.laraclassifier.local\/storage\/app\/logo\/thumb-2000x1000-header-63719ec1a751b.jpg"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/countries/{countryCode}/subAdmins1'
+    metadata:
+      title: 'List admin. divisions (1)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      countryCode:
+        name: countryCode
+        description: 'The country code of the country of the cities to retrieve.'
+        required: false
+        example: US
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the administrative division (1) relationships for Eager Loading - Possible values: country.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      sort:
+        name: sort
+        description: 'The sorting parameter (Order by DESC with the given column. Use "-" as prefix to order by ASC). Possible values: name.'
+        required: false
+        example: '-name'
+        type: string
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Items per page. Can be defined globally from the admin settings. Cannot be exceeded 100.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'Items page number. From 1 to ("total items" divided by "items per page value - perPage").'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"data":[{"code":"US.AL","country_code":"US","name":"Alabama","active":1},{"code":"US.AK","country_code":"US","name":"Alaska","active":1}],"links":{"first":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=1","last":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=26","prev":null,"next":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=2"},"meta":{"current_page":1,"from":1,"last_page":26,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=1","label":"1","active":true},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=2","label":"2","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=3","label":"3","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=4","label":"4","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=5","label":"5","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=6","label":"6","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=7","label":"7","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=8","label":"8","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=9","label":"9","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=25","label":"25","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=26","label":"26","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1?page=2","label":"Next &raquo;","active":false}],"path":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins1","per_page":2,"to":2,"total":51}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/countries/{countryCode}/subAdmins2'
+    metadata:
+      title: 'List admin. divisions (2)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      countryCode:
+        name: countryCode
+        description: 'The country code of the country of the cities to retrieve.'
+        required: false
+        example: US
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the administrative division (2) relationships for Eager Loading - Possible values: country,subAdmin1.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      sort:
+        name: sort
+        description: 'The sorting parameter (Order by DESC with the given column. Use "-" as prefix to order by ASC). Possible values: name.'
+        required: false
+        example: '-name'
+        type: string
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Items per page. Can be defined globally from the admin settings. Cannot be exceeded 100.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'Items page number. From 1 to ("total items" divided by "items per page value - perPage").'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"data":[{"code":"US.SC.001","country_code":"US","subadmin1_code":"US.SC","name":"Abbeville County","active":1},{"code":"US.LA.001","country_code":"US","subadmin1_code":"US.LA","name":"Acadia Parish","active":1}],"links":{"first":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=1","last":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=1572","prev":null,"next":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=2"},"meta":{"current_page":1,"from":1,"last_page":1572,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=1","label":"1","active":true},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=2","label":"2","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=3","label":"3","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=4","label":"4","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=5","label":"5","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=6","label":"6","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=7","label":"7","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=8","label":"8","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=9","label":"9","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=1571","label":"1571","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=1572","label":"1572","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2?page=2","label":"Next &raquo;","active":false}],"path":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/subAdmins2","per_page":2,"to":2,"total":3143}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/countries/{countryCode}/cities'
+    metadata:
+      title: 'List cities'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      countryCode:
+        name: countryCode
+        description: 'The country code of the country of the cities to retrieve.'
+        required: false
+        example: US
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the city relationships for Eager Loading - Possible values: country,subAdmin1,subAdmin2.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      sort:
+        name: sort
+        description: 'string|array The sorting parameter (Order by DESC with the given column. Use "-" as prefix to order by ASC). Possible values: name,population.'
+        required: false
+        example: '-name'
+        type: string
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Items per page. Can be defined globally from the admin settings. Cannot be exceeded 100.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'Items page number. From 1 to ("total items" divided by "items per page value - perPage").'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"data":[{"id":45650,"country_code":"US","name":"Abbeville","latitude":"34.18","longitude":"-82.38","subadmin1_code":"US.SC","subadmin2_code":"US.SC.001","population":5191,"time_zone":"America\/New_York","active":1,"posts_count":0},{"id":44696,"country_code":"US","name":"Abbeville","latitude":"29.97","longitude":"-92.13","subadmin1_code":"US.LA","subadmin2_code":"US.LA.113","population":12434,"time_zone":"America\/Chicago","active":1,"posts_count":0}],"links":{"first":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=1","last":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=3600","prev":null,"next":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=2"},"meta":{"current_page":1,"from":1,"last_page":3600,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=1","label":"1","active":true},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=2","label":"2","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=3","label":"3","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=4","label":"4","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=5","label":"5","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=6","label":"6","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=7","label":"7","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=8","label":"8","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=9","label":"9","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=3599","label":"3599","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=3600","label":"3600","active":false},{"url":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities?page=2","label":"Next &raquo;","active":false}],"path":"https:\/\/demo.laraclassifier.local\/api\/countries\/US\/cities","per_page":2,"to":2,"total":7200}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/subAdmins1/{code}'
+    metadata:
+      title: 'Get admin. division (1)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      code:
+        name: code
+        description: 'The administrative division (1)''s code.'
+        required: true
+        example: CH.VD
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the administrative division (1) relationships for Eager Loading - Possible values: country.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"code":"CH.VD","country_code":"CH","name":"Vaud","active":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/subAdmins2/{code}'
+    metadata:
+      title: 'Get admin. division (2)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      code:
+        name: code
+        description: 'The administrative division (2)''s code.'
+        required: true
+        example: CH.VD.2225
+        type: string
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the administrative division (2) relationships for Eager Loading - Possible values: country,subAdmin1.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"code":"CH.VD.2225","country_code":"CH","subadmin1_code":"CH.VD","name":"Lausanne District","active":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/cities/{id}'
+    metadata:
+      title: 'Get city'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      id:
+        name: id
+        description: 'The city''s ID.'
+        required: true
+        example: 12544
+        type: integer
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the city relationships for Eager Loading - Possible values: country,subAdmin1,subAdmin2.'
+        required: false
+        example: country
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"message":null,"result":{"id":12544,"country_code":"DE","name":"Berlin","latitude":"52.52","longitude":"13.41","subadmin1_code":"DE.16","subadmin2_code":"DE.16.00","population":3426354,"time_zone":"Europe\/Berlin","active":1,"country":{"code":"DE","name":"Germany","capital":"Berlin","continent_code":"EU","tld":".de","currency_code":"EUR","phone":"49","languages":"de","time_zone":null,"date_format":null,"datetime_format":null,"background_image":"app\/logo\/header-63719ec1a751b.jpg","admin_type":"1","active":1,"icode":"de","flag_url":"https:\/\/demo.laraclassifier.local\/images\/flags\/16\/de.png","background_image_url":"https:\/\/demo.laraclassifier.local\/storage\/app\/logo\/thumb-2000x1000-header-63719ec1a751b.jpg"},"posts_count":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []

@@ -1,0 +1,152 @@
+name: Payments
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/payments
+    metadata:
+      title: 'List payments'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the payment relationships for Eager Loading - Possible values: post,paymentMethod,package,currency.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+      sort:
+        name: sort
+        description: 'The sorting parameter (Order by DESC with the given column. Use "-" as prefix to order by ASC). Possible values: created_at.'
+        required: false
+        example: created_at
+        type: string
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Items per page. Can be defined globally from the admin settings. Cannot be exceeded 100.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"success":false,"message":"Unauthenticated or Token Expired, Please Login","result":null,"error_code":1}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/payments/{id}'
+    metadata:
+      title: 'Get payment'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters:
+      id:
+        name: id
+        description: 'The payment''s ID.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    queryParameters:
+      embed:
+        name: embed
+        description: 'Comma-separated list of the payment relationships for Eager Loading - Possible values: post,paymentMethod,package,currency.'
+        required: false
+        example: 'null'
+        type: string
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"success":false,"message":"Unauthenticated or Token Expired, Please Login","result":null,"error_code":1}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/payments
+    metadata:
+      title: 'Store payment'
+      description: 'Note: This endpoint is only available for the multi steps post edition.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+      Content-Language: en
+      X-AppApiToken: Uk1DSFlVUVhIRXpHbWt6d2pIZjlPTG15akRPN2tJTUs=
+      X-AppType: docs
+    urlParameters: []
+    queryParameters:
+      package:
+        name: package
+        description: 'Selected package ID.'
+        required: false
+        example: 19
+        type: integer
+        custom: []
+    bodyParameters:
+      country_code:
+        name: country_code
+        description: 'The code of the user''s country.'
+        required: true
+        example: US
+        type: string
+        custom: []
+      post_id:
+        name: post_id
+        description: 'The post''s ID.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+      package_id:
+        name: package_id
+        description: 'The package''s ID (Auto filled when the query parameter ''package'' is set).'
+        required: true
+        example: 16
+        type: integer
+        custom: []
+      payment_method_id:
+        name: payment_method_id
+        description: 'The payment method''s ID (required when the selected package''s price is > 0).'
+        required: false
+        example: 5
+        type: integer
+        custom: []
+    responses: []
+    responseFields: []

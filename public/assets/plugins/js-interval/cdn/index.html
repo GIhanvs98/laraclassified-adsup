@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./interval.js"></script>
+  </head>
+
+  <body>
+    <div id="counter"></div>
+
+    <button id="start">Start/Unpause timer</button>
+
+    <button id="pause">Pause timer</button>
+
+    <button id="reset">Reset/Stop timer</button>
+
+    <button id="restart">Restart timer</button>
+
+    <script>
+      const interval = new Interval({
+        counter: "#counter",
+        delay: 1000,
+        duration: 1,
+        onStart: function () {
+          console.log("When started the interval");
+        },
+        onEnd: function () {
+          console.log("When ended the interval");
+        },
+        onPaused: function () {
+          console.log("When paused the interval");
+        },
+        onReset: function () {
+          console.log("When reseted the interval");
+        },
+        onRestart: function () {
+          console.log("When restarted the interval");
+        },
+      });
+
+      $("#start").on("click", function () {
+        interval.start();
+      });
+
+      $("#pause").on("click", function () {
+        interval.pause();
+      });
+
+      $("#reset").on("click", function () {
+        interval.reset();
+      });
+
+      $("#restart").on("click", function () {
+        interval.restart();
+      });
+    </script>
+  </body>
+</html>

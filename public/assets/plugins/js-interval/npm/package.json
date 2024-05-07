@@ -1,0 +1,23 @@
+{
+  "name": "interval",
+  "version": "1.0.0",
+  "description": "Interval - Js class for advanced countdown timer.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenura-R-Gunarathna/js-interval.git#main"
+  },
+  "keywords": [
+    "interval",
+    "timer"
+  ],
+  "author": "kenura-r-gunarathna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kenura-R-Gunarathna/js-interval/issues"
+  },
+  "homepage": "https://github.com/Kenura-R-Gunarathna/js-interval#interval---js-class-for-advanced-countdown-timer"
+}

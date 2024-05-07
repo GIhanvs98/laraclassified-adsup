@@ -1,0 +1,12 @@
+.quarantine/
+.tmb/
+/app/logo/*
+/app/categories/custom/*
+/avatars/*
+/files/*
+/demo/
+!.gitignore
+/temporary/*
+/livewire-tmp/*
+/shops/*
+!/app/default/*

@@ -1,0 +1,38 @@
+User-agent: *
+Disallow:
+
+Allow: /
+
+User-agent: *
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /assets/
+Disallow: /css/
+Disallow: /js/
+Disallow: /vendor/
+Disallow: /main.php
+Disallow: /index.php
+Disallow: /mix-manifest.json
+Disallow: /locale/en
+Disallow: /locale/fr
+Disallow: /locale/es
+Disallow: /locale/ar
+Disallow: /locale/pt
+Disallow: /locale/de
+Disallow: /locale/it
+Disallow: /locale/tr
+Disallow: /locale/ru
+Disallow: /locale/hi
+Disallow: /locale/bn
+Disallow: /locale/zh
+Disallow: /locale/ja
+Disallow: /locale/th
+Disallow: /locale/ro
+Disallow: /locale/ka
+Disallow: /auth/facebook
+Disallow: /auth/linkedin
+Disallow: /auth/twitter
+Disallow: /auth/google
+
+
+Sitemap: http://127.0.0.1:8000/lk/sitemaps.xml
